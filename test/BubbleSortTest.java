@@ -27,13 +27,13 @@ public class BubbleSortTest {
     }
 
     @Test
-    public void testSort() throws InvalidObjectException {
+    public void testSort() {
         int[] actual = bubbleSort.sort(arr);
         assertArrayEquals(expected, actual);
     }
 
     @Test(expected = InvalidObjectException.class)
-    public void testSortWithNotInitializedArray() throws InvalidObjectException {
+    public void testSortWithNotInitializedArray() {
         bubbleSort.sort(notInitializedArr);
     }
 }

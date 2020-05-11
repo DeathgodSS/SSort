@@ -1,6 +1,6 @@
 package sort;
 
-public class InvalidObjectException extends Exception{
+public class InvalidObjectException extends RuntimeException {
 
     public InvalidObjectException(String message) {
         super(message);

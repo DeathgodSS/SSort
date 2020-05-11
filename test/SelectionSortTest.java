@@ -27,13 +27,13 @@ public class SelectionSortTest {
     }
 
     @Test
-    public void testSort() throws InvalidObjectException {
+    public void testSort() {
         int[] actual = selectionSort.sort(arr);
         assertArrayEquals(expected, actual);
     }
 
     @Test(expected = InvalidObjectException.class)
-    public void testSortWithNotInitializedArray() throws InvalidObjectException {
+    public void testSortWithNotInitializedArray() {
         selectionSort.sort(notInitializedArr);
     }
 }

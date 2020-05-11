@@ -6,7 +6,7 @@ import sort.sortable.*;
 public class BubbleSort implements Sortable {
 
     @Override
-    public int[] sort(int[] arr) throws InvalidObjectException {
+    public int[] sort(int[] arr) {
         if (arr == null) {
             throw new InvalidObjectException("The link does't contain an array");
         }
