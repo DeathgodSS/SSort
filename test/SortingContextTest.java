@@ -1,9 +1,7 @@
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import sort.InvalidObjectException;
 import sort.SortingContext;
-import sort.sortable.Sortable;
 import sort.sortable.impl.*;
 
 import static org.junit.Assert.*;
