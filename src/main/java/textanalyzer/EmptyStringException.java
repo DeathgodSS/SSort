@@ -1,4 +1,4 @@
-package textStatisticAnalyzer;
+package textanalyzer;
 
 public class EmptyStringException extends RuntimeException {
     public EmptyStringException(String message) {
