@@ -34,11 +34,11 @@ public class TextStatisticAnalyzer {
         for (Map.Entry<String, Integer> e : treeMap.entrySet()) {
             letter = e.getKey().toUpperCase().toCharArray()[0];
             if (letter == previousLetter) {
-                result.append("\t" + e.getKey() + " " + e.getValue() + "\n");
+                result.append("\t").append(e.getKey()).append(" ").append(e.getValue()).append("\n");
 
             } else {
-                result.append(e.getKey().toUpperCase().toCharArray()[0] +
-                        ": " + " " + e.getKey() + " " + e.getValue() + "\n");
+                result.append(e.getKey().toUpperCase().toCharArray()[0])
+                        .append(": ").append(" ").append(e.getKey()).append(" ").append(e.getValue()).append("\n");
             }
             previousLetter = e.getKey().toUpperCase().toCharArray()[0];
         }
