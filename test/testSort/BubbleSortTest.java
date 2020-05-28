@@ -1,15 +1,17 @@
+package testSort;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import sort.EmptyArrayException;
 import sort.InvalidArrayException;
-import sort.sortable.impl.SelectionSort;
+import sort.sortable.impl.BubbleSort;
 
 import static org.junit.Assert.*;
 
-public class SelectionSortTest {
+public class BubbleSortTest {
 
-    private SelectionSort selectionSort;
+    private BubbleSort bubbleSort;
     private int[] arr;
     private int[] notInitializedArr;
     private int[] emptyArr;
@@ -18,7 +20,7 @@ public class SelectionSortTest {
 
     @Before
     public void setUp() {
-        selectionSort = new SelectionSort();
+        bubbleSort = new BubbleSort();
         arr = new int[]{4, 7, 12, -1, 22, -7, 11, 6};
         notInitializedArr = null;
         emptyArr = new int[]{};
@@ -28,27 +30,27 @@ public class SelectionSortTest {
 
     @After
     public void tearDown() {
-        selectionSort = null;
+        bubbleSort = null;
     }
 
     @Test
     public void testSort() {
-        int[] actual = selectionSort.sort(arr);
+        int[] actual = bubbleSort.sort(arr);
         assertArrayEquals(expected, actual);
     }
 
     @Test(expected = InvalidArrayException.class)
     public void testSortWithNotInitializedArray() {
-        selectionSort.sort(notInitializedArr);
+        bubbleSort.sort(notInitializedArr);
     }
 
     @Test(expected = EmptyArrayException.class)
     public void testEmptyArraySort() {
-        int[] actual = selectionSort.sort(emptyArr);
+        int[] actual = bubbleSort.sort(emptyArr);
     }
 
     @Test(expected = EmptyArrayException.class)
     public void testSingleElementArraySort() {
-        int[] actual = selectionSort.sort(singleElementArr);
+        int[] actual = bubbleSort.sort(singleElementArr);
     }
 }
