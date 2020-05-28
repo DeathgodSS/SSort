@@ -11,20 +11,26 @@ public class TextStatisticAnalyzer {
     }
 
     public String receiveAnalise() {
+        isEmptyString(text);
         String[] words = wordSplitter(text);
         Map<String, Integer> statistic = collectStatistic(words);
         return groupResult(statistic);
     }
 
+    private void isEmptyString(String str) {
+        if ((str == null) || (str.length() == 0)) {
+            throw new EmptyStringException("The link does't contain any data");
+        }
+    }
+
     private String[] wordSplitter(String text) {
-        String[] words = text.split("[^a-zA-Z']+");
-        return words;
+        return text.split("[^a-zA-Z']+");
     }
 
     private String groupResult(Map<String, Integer> treeMap) {
         StringBuilder result = new StringBuilder();
         char previousLetter = ' ';
-        char letter = ' ';
+        char letter;
         for (Map.Entry<String, Integer> e : treeMap.entrySet()) {
             letter = e.getKey().toUpperCase().toCharArray()[0];
             if (letter == previousLetter) {
@@ -53,6 +59,4 @@ public class TextStatisticAnalyzer {
         }
         return tempTreeMap;
     }
-
-
 }
