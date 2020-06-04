@@ -13,8 +13,6 @@ import static org.junit.Assert.assertNotEquals;
 
 public class SetUtilityTest {
 
-    SetUtility<Integer> setUtility = new SetUtility<>();
-
     HashSet<Integer> set1 = new HashSet<>(7);
     HashSet<Integer> set2 = new HashSet<>(7);
     HashSet<Integer> nullSet1 = null;
@@ -59,59 +57,59 @@ public class SetUtilityTest {
 
     @Test
     public void union() {
-        Set<Integer> actual = setUtility.union(set1, set2);
+        Set<Integer> actual = SetUtility.union(set1, set2);
         assertEquals(actual, expectedUnion);
     }
 
     @Test
     public void unionNegativeCase() {
-        Set<Integer> actual = setUtility.union(set1, set2);
+        Set<Integer> actual = SetUtility.union(set1, set2);
         assertNotEquals(actual, expectedIntersection);
     }
 
     @Test
     public void intersection() {
-        Set<Integer> actual = setUtility.intersection(set1, set2);
+        Set<Integer> actual = SetUtility.intersection(set1, set2);
         assertEquals(actual, expectedIntersection);
     }
 
     @Test
     public void intersectionNegativeCase() {
-        Set<Integer> actual = setUtility.intersection(set1, set2);
+        Set<Integer> actual = SetUtility.intersection(set1, set2);
         assertNotEquals(actual, expectedUnion);
     }
 
     @Test
     public void minus() {
-        Set<Integer> actual = setUtility.minus(set1, set2);
+        Set<Integer> actual = SetUtility.minus(set1, set2);
         assertEquals(actual, expectedMinus);
     }
 
     @Test
     public void minusNegativeCase() {
-        Set<Integer> actual = setUtility.minus(set1, set2);
+        Set<Integer> actual = SetUtility.minus(set1, set2);
         assertNotEquals(actual, expectedDifference);
     }
 
     @Test
     public void difference() {
-        Set<Integer> actual = setUtility.difference(set1, set2);
+        Set<Integer> actual = SetUtility.difference(set1, set2);
         assertEquals(actual, expectedDifference);
     }
 
     @Test
     public void differenceNegativeCase() {
-        Set<Integer> actual = setUtility.difference(set1, set2);
+        Set<Integer> actual = SetUtility.difference(set1, set2);
         assertNotEquals(actual, expectedMinus);
     }
 
     @Test(expected = NullPointerException.class)
     public void exceptionNullFirstArgumentCase() {
-        setUtility.difference(nullSet1, set2);
+        SetUtility.difference(nullSet1, set2);
     }
 
     @Test(expected = NullPointerException.class)
     public void exceptionNullSecondArgumentCase() {
-        setUtility.difference(set1, nullSet2);
+        SetUtility.difference(set1, nullSet2);
     }
 }
